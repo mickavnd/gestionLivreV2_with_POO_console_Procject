@@ -47,6 +47,8 @@ public class Book {
 	}
 
 
+		
+	
 	private String getMaisonEdition() {
 		return maisonEdition;
 	}
