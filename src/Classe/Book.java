@@ -9,11 +9,11 @@ public class Book {
 	 private String maisonEdition;
 	 private int NBpages;
 	 private int isbn;
+	 private int Nbexamplaire;
 	 
 	 
 	 //constructeurs
-	 
-	 public Book() {
+	public Book() {
 		 
 	 }
 	 
@@ -31,52 +31,67 @@ public class Book {
 	public String toString() {
 		return this.getTitre() +this.getAuteur()+this.getMaisonEdition()+this.getNBpages();
 	}
+	
+	public Book  createBook(String title,String auteur,String maisonEdition,int NbPage) {
+		
+		Book book = new Book(title,auteur,maisonEdition,NbPage);		
+		
+		return book;
+		}
 		
 
 	
 	//getter et setter
 
 
-	private int getNBpages() {
+	public  int getNBpages() {
 		return NBpages;
 	}
 
 
-	private void setNBpages(int nBpages) {
+	public  void setNBpages(int nBpages) {
 		NBpages = nBpages;
 	}
 
 
 		
 	
-	private String getMaisonEdition() {
+	public	 String getMaisonEdition() {
 		return maisonEdition;
 	}
 
 
-	private void setMaisonEdition(String maisonEdition) {
+	public void setMaisonEdition(String maisonEdition) {
 		this.maisonEdition = maisonEdition;
 	}
 
 
-	private String getAuteur() {
+	 public String getAuteur() {
 		return auteur;
 	}
 
 
-	private void setAuteur(String auteur) {
+	public void setAuteur(String auteur) {
 		this.auteur = auteur;
 	}
 
 
-	private String getTitre() {
+	public String getTitre() {
 		return titre;
 	}
 
 
-	private void setTitre(String titre) {
+	 public void setTitre(String titre) {
 		this.titre = titre;
 	}
+	 
+	 public int getNbexamplaire() {
+			return Nbexamplaire;
+		}
+
+		public void setNbexamplaire(int nbexamplaire) {
+			Nbexamplaire = nbexamplaire;
+		}
 	
 
 }

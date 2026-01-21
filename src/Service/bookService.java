@@ -12,11 +12,12 @@ Book book = new Book();
 //ajouter un livre
 
 public Book  createBook(String title,String auteur,String maisonEdition,int NbPage) {
-	Book book = new Book(title,auteur,maisonEdition ,NbPage);		
 	
-	return  book;
+	book.createBook(title, auteur, maisonEdition, NbPage);		
 	
-}
+	return book;
+	}
+	
 
 //afficher le livre
 
@@ -29,10 +30,25 @@ public void displayBook(Book book) {
 //voir comment supprimer  un  livre ??
 public void removebook( String  title) {
 	
+	if(book.equals(title)) {
+		book.setTitre("");
+		
+	}
+	
 	
 	
 }
-//update un livre
+//update  le titre d'un  livre
+
+public void updatetitle(String res){
+	
+	if(book.equals(res)) {
+	
+		book.setAuteur(res);
+		
+	}
+	
+}
 
 
 }
