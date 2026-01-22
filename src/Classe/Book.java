@@ -39,6 +39,26 @@ public class Book {
 		return book;
 		}
 		
+	public void removebook( String  title) {
+		
+		if(this.equals(title)) {
+			
+			this.setTitre("");
+		}
+		
+			
+		}
+	
+	
+	public void updatetitle(String res){
+		
+		if(this.equals(res)) {
+		
+			this.setAuteur(res);
+			
+		}
+		
+	}
 
 	
 	//getter et setter

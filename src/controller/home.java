@@ -28,6 +28,8 @@ public class home  {
 		 		  tap 4 pour autre 
 		 		""");
 		 
+		 // le nextint permet  ne pas faire de boucle infini car lexcution est pas terminé
+		 
 		 userchoise = sc.nextInt();
 		 
 		 switch(userchoise) {
@@ -36,12 +38,10 @@ public class home  {
 		 case 2 -> firstboucle = displaybookavalide();
 		 case 3 -> firstboucle = displayLibery();
 		 case 4 -> firstboucle = displaymore();
-		 default-> System.out.printf("votre choix ne correspond pas ",firstboucle =false);
+		 default-> System.out.printf("votre choix ne correspond pas ",firstboucle =true);
 		 
 		 }
-		 	
-		
-		break;
+		 
 		
 		
 		}
@@ -58,6 +58,43 @@ public class home  {
 	}
 
 	private static boolean displayLibery() {
+		boolean Liberayboucle = true;
+		String userchoice ;
+		
+		while(Liberayboucle) { 
+			
+			System.out.println("test");
+			
+			userchoice= sc.next();
+			
+			if(userchoice.contains("retour")) {
+				break;
+			}
+		
+
+			
+		}
+	
+		
+		return true;
+	}
+
+	private static boolean displaybookavalide() {
+		// TODO Auto-generated method stub
+		for(Book books : list) {
+			System.out.println(books.getTitre());
+		}
+		return false;
+	}
+
+	private static boolean displayCreateaccout() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	//crud libery
+	
+	public static boolean addBook() {
 		
 		int NBbooks =0;
 		// TODO Auto-generated method stub
@@ -80,19 +117,10 @@ public class home  {
 		}
 		
 		return true;
+		
 	}
-
-	private static boolean displaybookavalide() {
-		// TODO Auto-generated method stub
-		for(Book books : list) {
-			System.out.println(books.getTitre());
-		}
-		return false;
-	}
-
-	private static boolean displayCreateaccout() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
+	
+	
 }
+
+

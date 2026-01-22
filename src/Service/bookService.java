@@ -8,6 +8,8 @@ public class bookService  {
 	
 Book book = new Book();
 
+// voir plus tard comment cree des service .
+ 
 
 //ajouter un livre
 
