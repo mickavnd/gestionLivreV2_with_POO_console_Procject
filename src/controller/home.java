@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import Classe.Book;
-import Service.bookService;
+
 
 public class home  {
-	 static bookService bookService;// ne fonctionne pas 
+			// ne fonctionne pas 
 	 static Scanner  sc = new Scanner(System.in);
 	 static ArrayList<Book> list = new ArrayList<Book>();
 	 //instance a appellr une fois
@@ -41,14 +41,7 @@ public class home  {
 		 default-> System.out.printf("votre choix ne correspond pas ",firstboucle =true);
 		 
 		 }
-		 
-		
-		
 		}
-		
-		
-		
-
 		
 	}
 
@@ -69,10 +62,7 @@ public class home  {
 			
 			if(userchoice.contains("retour")) {
 				break;
-			}
-		
-
-			
+			}	
 		}
 	
 		
@@ -109,8 +99,7 @@ public class home  {
 			System.out.println("maison edition8");
 			String edition =sc.next();
 				  
-			list.add(book.createBook(title,author,edition,0));
-			 	 
+		
 		}
 		for(Book books : list) {
 			System.out.println(books.getTitre());

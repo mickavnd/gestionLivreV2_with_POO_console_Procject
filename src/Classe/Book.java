@@ -6,10 +6,8 @@ public class Book {
 		
 	 private String titre;
 	 private String auteur;
-	 private String maisonEdition;
-	 private int NBpages;
 	 private int isbn;
-	 private int Nbexamplaire;
+	 private boolean disponible; 
 	 
 	 
 	 //constructeurs
@@ -17,73 +15,50 @@ public class Book {
 		 
 	 }
 	 
-	public Book(String titre,String auteur ,String maisonEdition,int Nbpages) {
+	public Book(String titre,String auteur ,int isbn,boolean disponible) {
 		
-		this.setTitre(titre);
-		this.setAuteur(auteur);
-		this.setMaisonEdition(maisonEdition);
-		this.setNBpages(Nbpages);
+		this.titre =titre;
+		this.auteur =auteur;
+		this.isbn = isbn;
+		this.disponible = disponible;
 		
 	}
 	
 	//methode
 	
-	public String toString() {
-		return this.getTitre() +this.getAuteur()+this.getMaisonEdition()+this.getNBpages();
+	public String afficherinfos () {
+		return this.getTitre() +this.getAuteur()+this.getIsbn()+this.isDisponible();
 	}
 	
-	public Book  createBook(String title,String auteur,String maisonEdition,int NbPage) {
+	public void emprunter() {
 		
-		Book book = new Book(title,auteur,maisonEdition,NbPage);		
-		
-		return book;
-		}
-		
-	public void removebook( String  title) {
-		
-		if(this.equals(title)) {
+		if (isDisponible()) {
 			
-			this.setTitre("");
-		}
+		this.setDisponible(false);
+		System.out.println("vous avez emprunter le livre" + this.titre);
 		
+		}if(!isDisponible()) {
+			
+			System.out.println(" le livre "+this.titre +"nes pas disponible");
 			
 		}
+	}
 	
-	
-	public void updatetitle(String res){
+	public void retourner() {
 		
-		if(this.equals(res)) {
-		
-			this.setAuteur(res);
-			
-		}
+		this.setDisponible(true);
+		System.out.println("vous avez retourne le livre"+ this.titre);
 		
 	}
+	
+		
+	
+	
+	
 
 	
 	//getter et setter
 
-
-	public  int getNBpages() {
-		return NBpages;
-	}
-
-
-	public  void setNBpages(int nBpages) {
-		NBpages = nBpages;
-	}
-
-
-		
-	
-	public	 String getMaisonEdition() {
-		return maisonEdition;
-	}
-
-
-	public void setMaisonEdition(String maisonEdition) {
-		this.maisonEdition = maisonEdition;
-	}
 
 
 	 public String getAuteur() {
@@ -104,14 +79,22 @@ public class Book {
 	 public void setTitre(String titre) {
 		this.titre = titre;
 	}
+
+	public int getIsbn() {
+		return isbn;
+	}
+
+	public void setIsbn(int isbn) {
+		this.isbn = isbn;
+	}
+
+	public boolean isDisponible() {
+		return disponible;
+	}
+
+	public void setDisponible(boolean disponible) {
+		this.disponible = disponible;
+	}
 	 
-	 public int getNbexamplaire() {
-			return Nbexamplaire;
-		}
-
-		public void setNbexamplaire(int nbexamplaire) {
-			Nbexamplaire = nbexamplaire;
-		}
 	
-
 }
