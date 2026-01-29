@@ -3,7 +3,7 @@ package Classe;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Membre {
+public  abstract class  Membre {
 	
 	private  int id;
 	private String nom;
@@ -59,16 +59,7 @@ public void setListEmprunts(List<Book> listEmprunts) {
 
 //methode 
 
-public void emprunterLivre(Book livre) {
-	
-	if (livre.isDisponible()) {
-		
-		livre.emprunter();	
-		ListEmprunts.add(livre);
-		
-	}
-	
-}
+public  abstract void emprunterLivre(Book livre);
 
 public void retournerLivre(Book livre) {
 	
