@@ -34,14 +34,12 @@ public class Book {
 		
 		if (isDisponible()) {
 			
-		this.setDisponible(false);
 		System.out.println("vous avez emprunter le livre" + this.titre);
-		
-		}if(!isDisponible()) {
-			
-			System.out.println(" le livre "+this.titre +"nes pas disponible");
-			
+		this.setDisponible(false);
+		}else {
+			System.out.println("le livre nest pas disponible");
 		}
+		
 	}
 	
 	public void retourner() {

@@ -17,11 +17,17 @@ public class Professeur extends Membre {
 	public void emprunterLivre(Book livre) {
 		// TODO Auto-generated method stub
 		
-		if(getListEmprunts().size()<nbLivreAutorise) {
+		if(livre.isDisponible()) {
+			if(getListEmprunts().size()<nbLivreAutorise) {
 			if (livre.isDisponible()) {
 			
 			livre.emprunter();	
 			getListEmprunts().add(livre);
+		}else {
+			System.out.println("le livre n'est plus disponible");
+		}
+		
+		
 			
 		}
 			

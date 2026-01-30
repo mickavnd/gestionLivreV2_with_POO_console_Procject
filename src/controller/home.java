@@ -1,9 +1,14 @@
 package controller;
 
+import java.lang.reflect.Member;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import Classe.Bilbliotheque;
 import Classe.Book;
+import Classe.Etudiant;
+import Classe.Membre;
+import Classe.Professeur;
 
 
 public class home  {
@@ -15,9 +20,47 @@ public class home  {
 	 
 	public static void main(String[] args) {
 		
-		int userchoise ;
-		boolean firstboucle =true;
+		Bilbliotheque liberay = new Bilbliotheque();
 		
+		Book book2 = new Book();
+		Book book3 = new Book();
+		Book book4 = new Book();
+		 
+		Etudiant student  = new Etudiant(1, "vende", 24);
+		Professeur prof =  new Professeur(2, "cagape", 1);
+		
+		liberay.getListMembre().add(student);
+		liberay.getListMembre().add(prof);
+		
+		liberay.AfficheMembre();
+		
+		
+		book.setTitre("naruto");
+		book.setDisponible(true);
+		
+		book2.setTitre("one piece");
+		book2.setDisponible(true);
+		
+		book3.setTitre("bleach");
+		book3.setDisponible(true);
+		
+		book4.setTitre("dbz");
+		book4.setDisponible(true);
+		
+		
+		student.emprunterLivre(book);
+		
+		student.emprunterLivre(book2);
+		student.emprunterLivre(book3);
+		student.emprunterLivre(book4);
+		
+		student.retournerLivre(book);  
+		
+		
+		System.out.println("hello world");
+		
+	}
+	/*5	
 		while(firstboucle) {
 			System.out.println("=========================");
 		System.out.println("bienvenue sur ta gestion de livre");
@@ -109,7 +152,7 @@ public class home  {
 		
 	}
 	
-	
+	*/
 }
 
 

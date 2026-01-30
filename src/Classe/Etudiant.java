@@ -35,16 +35,23 @@ public class Etudiant extends Membre {
 		
 		// TODO Auto-generated method stub
 		
+		
 		if(getListEmprunts().size()<nbLivreAutorise) {
+			
 			if (livre.isDisponible()) {
-			
-			livre.emprunter();	
+			System.out.println("hello world");	
 			getListEmprunts().add(livre);
+			livre.emprunter();
 			
+			
+			System.out.println("vous avez emprunter le livre" +livre.getTitre());
+			
+		}else {
+			System.out.println("le livre nest pas disponible");
 		}
 			
 		}else {
-			System.out.println("vous avez depasser le nombre de Livre emprunter autorise qui est"+nbLivreAutorise);
+			System.out.println("vous avez depasser le nombre de Livre emprunter autorise qui est "+nbLivreAutorise);
 		}
 		
 	}
