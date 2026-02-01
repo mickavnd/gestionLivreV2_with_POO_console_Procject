@@ -5,15 +5,15 @@ import java.util.List;
 
 public  abstract class  Membre {
 	
-	private  int id;
+	private  String id;
 	private String nom;
 	private List<Book> ListEmprunts;
 	
 	
 	
-  public Membre( int id ,String nom) {
+  public Membre( String nom) {
 	  
-	  this.id = id;
+	  this.id = IdGenerate.generateId();
 	  this.nom = nom;
 	  this.ListEmprunts =new ArrayList<Book>();
 
@@ -22,13 +22,13 @@ public  abstract class  Membre {
 
 
 
-public int getId() {
+public String getId() {
 	return id;
 }
 
 
 
-public void setId(int id) {
+public void setId(String id) {
 	this.id = id;
 }
 

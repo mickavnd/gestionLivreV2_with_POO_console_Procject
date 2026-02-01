@@ -5,8 +5,8 @@ public class Professeur extends Membre {
 	private int carteProfesseur;
 	private int nbLivreAutorise = 5;
 	
-	public Professeur(int id, String nom,int carteProffesseur) {
-		super(id, nom);
+	public Professeur( String nom,int carteProffesseur) {
+		super( nom);
 		this.carteProfesseur =carteProfesseur;
 		// TODO Auto-generated constructor stub
 	}
@@ -26,8 +26,6 @@ public class Professeur extends Membre {
 		}else {
 			System.out.println("le livre n'est plus disponible");
 		}
-		
-		
 			
 		}
 			

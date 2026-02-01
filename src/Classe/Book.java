@@ -27,7 +27,7 @@ public class Book {
 	//methode
 	
 	public String afficherinfos () {
-		return this.getTitre() +this.getAuteur()+this.getIsbn()+this.isDisponible();
+		return "titre :"+this.getTitre()+" , auteur : " +this.getAuteur()+" ,isbn :" +this.getIsbn()+" , " +disponible(isDisponible());
 	}
 	
 	public void emprunter() {
@@ -47,6 +47,15 @@ public class Book {
 		this.setDisponible(true);
 		System.out.println("vous avez retourne le livre"+ this.titre);
 		
+	}
+	
+	public String disponible(Boolean isBoolean) {
+		
+		if (isDisponible()) {
+			return "disponible";
+		}else {
+			return "non - disponible";
+		}
 	}
 	
 		

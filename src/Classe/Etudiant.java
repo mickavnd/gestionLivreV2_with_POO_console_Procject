@@ -8,8 +8,8 @@ public class Etudiant extends Membre {
 	private int nbLivreAutorise =3;
 	
 	
-	public Etudiant(int id, String nom,int carteEtudiant) {
-		super(id, nom);
+	public Etudiant (String nom,int carteEtudiant) {
+		super(nom);
 		this.carteEtudiant = carteEtudiant;
 		// TODO Auto-generated constructor stub
 	}
@@ -42,6 +42,7 @@ public class Etudiant extends Membre {
 			System.out.println("hello world");	
 			getListEmprunts().add(livre);
 			livre.emprunter();
+		
 			
 			
 			System.out.println("vous avez emprunter le livre" +livre.getTitre());
@@ -53,6 +54,16 @@ public class Etudiant extends Membre {
 		}else {
 			System.out.println("vous avez depasser le nombre de Livre emprunter autorise qui est "+nbLivreAutorise);
 		}
+		
+	}
+	
+	public void retournLivre(Book livre) {
+		
+		getListEmprunts().remove(livre);
+		livre.retourner();
+		
+		System.out.println("vous avez retourner le livre" +livre.getTitre());
+		
 		
 	}
 	
