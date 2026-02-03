@@ -3,18 +3,20 @@ package Classe;
 import java.util.ArrayList;
 import java.util.List;
 
-public  abstract class  Membre {
+public  class  Membre {
 	
 	private  String id;
 	private String nom;
+	public int limiteEmprunts;
 	private List<Book> ListEmprunts;
 	
 	
 	
-  public Membre( String nom) {
+  public Membre( String nom,int limiteEmprunts) {
 	  
 	  this.id = IdGenerate.generateId();
 	  this.nom = nom;
+	  this.limiteEmprunts = limiteEmprunts;
 	  this.ListEmprunts =new ArrayList<Book>();
 
 	  
@@ -56,10 +58,17 @@ public void setListEmprunts(List<Book> listEmprunts) {
 	ListEmprunts = listEmprunts;
 }
   
+public int getLimiteEmprunts() {
+	return limiteEmprunts;
+}
 
-//methode 
 
-public  abstract void emprunterLivre(Book livre);
+
+public void setLimiteEmprunts(int limiteEmprunts) {
+	this.limiteEmprunts = limiteEmprunts;
+}
+
+
 
 public void retournerLivre(Book livre) {
 	

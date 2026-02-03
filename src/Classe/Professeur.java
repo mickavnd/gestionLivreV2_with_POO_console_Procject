@@ -3,38 +3,13 @@ package Classe;
 public class Professeur extends Membre {
 	
 	private int carteProfesseur;
-	private int nbLivreAutorise = 5;
 	
-	public Professeur( String nom,int carteProffesseur) {
-		super( nom);
-		this.carteProfesseur =carteProfesseur;
+	public Professeur( String nom,int limiteEmprunts, int carteProffesseur) {
+		super( nom,limiteEmprunts );
+		this.carteProfesseur =carteProffesseur;
 		// TODO Auto-generated constructor stub
 	}
 
 	
-
-	@Override
-	public void emprunterLivre(Book livre) {
-		// TODO Auto-generated method stub
-		
-		if(livre.isDisponible()) {
-			if(getListEmprunts().size()<nbLivreAutorise) {
-			if (livre.isDisponible()) {
-			
-			livre.emprunter();	
-			getListEmprunts().add(livre);
-		}else {
-			System.out.println("le livre n'est plus disponible");
-		}
-			
-		}
-			
-		}else {
-			System.out.println("vous avez depasser le nombre de Livre emprunter autorise qui est"+nbLivreAutorise);
-		}
-		
-	}
-	
-
 
 }

@@ -16,11 +16,19 @@ public class home  {
 	 static Scanner  sc = new Scanner(System.in);
 	 static ArrayList<Book> list = new ArrayList<Book>();
 	 //instance a appellr une fois
-	 static  Book book = new Book();
 	 static Bilbliotheque library = new Bilbliotheque();
 	 
 	public static void main(String[] args) {
+		
+		/*Membre user = new Etudiant("vende", 1, 3);
+		Membre user2 = new Etudiant("cagape", 1, 3);
+		
+		Book livre = new Book("nartuo","micka",1,true);
+		
+		library.emprunteLivre(user, livre);*/
+		
 	
+		
 		
 		while(true) {
 			System.out.println("============Menu============");
@@ -54,7 +62,30 @@ public class home  {
 		 		library.AjoutLivre();
 		 		break;
 		 }
-		 case 4 : 
+		 case 4 : {System.out.println("qui  et vous  ?");
+		 			for(int i= 0 ;i<library.getListMembre().size();i++) {
+		 				//get() return the index			
+		 				System.out.println(i +"-"+library.getListMembre().get(i).getNom());
+		 				
+		 			}
+		 			int choixMembre = sc.nextInt();
+		 			Membre user = library.getListMembre().get(choixMembre);
+		 			
+		 			System.out.println("quelle livre voulez vous emprunté ?");
+		 			for(int i= 0 ;i<library.getListLivre().size();i++) {
+ 						
+		 				//important to know that 
+		 				System.out.println(i +"-"+library.getListLivre().get(i).getTitre()+1);
+		 				
+		 			}
+		 			int choixLivre = sc.nextInt();
+		 			Book choiceLivre = library.getListLivre().get(choixLivre);
+		 			
+		 			 
+		 			 library.emprunteLivre(user, choiceLivre);
+		 			break;			
+			 
+		 }
 			 
 		 default: System.out.printf("votre choix ne correspond pas ");
 		 			break;
@@ -65,7 +96,8 @@ public class home  {
 
 
 		}
-		
+	
 	}
+	
 	}
 

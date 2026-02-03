@@ -5,14 +5,20 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Bilbliotheque {
+	
+	//attribut
 	private List<Book> listLivre;
 	private List<Membre> listMembre;
+	
+	//constructeur
 	
 	public Bilbliotheque() {
 		this.listLivre =new ArrayList<Book>();
 		this.listMembre =new ArrayList<Membre>();
 	}
 
+	
+	//getter et setter
 	public List<Book> getListLivre() {
 		return listLivre;
 	}
@@ -29,6 +35,8 @@ public class Bilbliotheque {
 		this.listMembre = listMembre;
 	}
 	
+	//methode
+	
 	public void AfficheMembre() {
 		 
 	for(Membre lst : listMembre) {
@@ -42,6 +50,9 @@ public class Bilbliotheque {
 
 	public  void AjouterMembre(String choix) {
 		Scanner sc = new Scanner(System.in);
+		Membre nouveauxuser;
+		
+		//we use Member that we call polymorphisme;
 		
 			//its better too use contains than  ==
 			if(choix.contains("etudiant")) {
@@ -49,15 +60,15 @@ public class Bilbliotheque {
 			System.out.println("votre nom ?");
 			
 			String nom = sc.next();
-			Etudiant etudiant = new Etudiant(nom,1);
-			listMembre.add(etudiant);		
-		}else if(choix =="professeur") {
+			 nouveauxuser  = new Etudiant(nom, 3, 0);
+			listMembre.add(nouveauxuser);		
+		}else if(choix.contains("professeur")) {
 		
 			System.out.println("votre nom ?");
 			
 			String nom = sc.next();
-			Professeur prof = new Professeur(nom,1);
-			listMembre.add(prof);	
+			 nouveauxuser = new Professeur(nom,5,1);
+			listMembre.add(nouveauxuser);	
 			
 		}else {
 			System.out.println("je ne comprend pas votre choix");
@@ -111,6 +122,33 @@ public class Bilbliotheque {
 		
 
 	
+	}
+	
+	public void emprunteLivre(Membre user , Book livre) {
+		
+	
+		
+		if(livre.isDisponible()) {
+			
+			if(user.getListEmprunts().size()< user.limiteEmprunts) {
+				System.out.println("hello word1");
+			if (livre.isDisponible()) {
+			
+			user.getListEmprunts().add(livre);
+			System.out.println("hello word1");
+			System.out.println("vous avez emprunter le livre "+ livre.getTitre());	
+			
+		}else {
+			System.out.println("le livre n'est plus disponible");
+		}
+			
+		}
+			
+		}else {
+			System.out.println("vous avez depasser le nombre de Livre emprunter autorise qui est"+user.getLimiteEmprunts());
+		}
+		
+		
 	}
 	
 }

@@ -33,8 +33,6 @@ public class Book {
 	public void emprunter() {
 		
 		if (isDisponible()) {
-			
-		System.out.println("vous avez emprunter le livre" + this.titre);
 		this.setDisponible(false);
 		}else {
 			System.out.println("le livre nest pas disponible");
@@ -58,11 +56,6 @@ public class Book {
 		}
 	}
 	
-		
-	
-	
-	
-
 	
 	//getter et setter
 
