@@ -1,6 +1,7 @@
 package Classe;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -131,12 +132,12 @@ public class Bilbliotheque {
 		if(livre.isDisponible()) {
 			
 			if(user.getListEmprunts().size()< user.limiteEmprunts) {
-				System.out.println("hello word1");
 			if (livre.isDisponible()) {
 			
 			user.getListEmprunts().add(livre);
-			System.out.println("hello word1");
-			System.out.println("vous avez emprunter le livre "+ livre.getTitre());	
+			livre.emprunter();	
+			System.out.println("vous avez emprunter le livre "+ livre.getTitre());
+			
 			
 		}else {
 			System.out.println("le livre n'est plus disponible");
@@ -151,4 +152,31 @@ public class Bilbliotheque {
 		
 	}
 	
+	public void retourneLivre(Book livre) {
+		
+	}
+	
+	public void rechercherUnLivre(String name) {
+		 Scanner sc = new Scanner(System.in);
+		 String Motcle = name.toLowerCase();
+		 //cree une list  pour  ajouter les livre que tu chercher
+		 List<Book> searchlst = new ArrayList<>();
+		 
+		 for(Book lst : listLivre) {
+			 if(lst.getTitre().toLowerCase().contains(Motcle)) {
+				 searchlst.add(lst);
+			 }
+			 
+		 }
+		 //verifier si  la list est vide 
+		 if(searchlst.isEmpty()) {
+			 System.out.println("aucun livre trouver");
+		 }else {
+			 for(Book lst : searchlst) {
+			 
+			 System.out.println(lst.afficherinfos()); 
+		 }
+		 }			
+			
+	}
 }
