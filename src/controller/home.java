@@ -26,7 +26,8 @@ public class home  {
 		
 		/*Todo : -finir le de relier  les fonctionaliter dans  le switch
 		 * 		-bien implementer le  switch case
-		 * 		-cree un admin 
+		 * 		-cree un admin
+		 * 		-nombre dexemplaire pour un livre quand =0 zero livre nest plus dispo 
 		 * 		-des acces restrein quand on est pas admin 
 		 * 		-voir pour ajouter des donner a la creation  de compte
 		 * 		-cree un  un serviceBiblotch
@@ -118,6 +119,9 @@ public class home  {
 		 		}	
 		 	}
 		 	break;
+		 }case 6 :{ 
+			 
+			 
 		 }
 		 case 7 :{System.out.println("voici la liste des  membre"); 
 		 		if(library.getListMembre().isEmpty()) {

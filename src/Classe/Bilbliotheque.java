@@ -130,30 +130,33 @@ public class Bilbliotheque {
 		
 	
 		
-		if(livre.isDisponible()) {
+		if(livre.isDisponible()&& user.getListEmprunts().size()< user.limiteEmprunts) {
 			
-			if(user.getListEmprunts().size()< user.limiteEmprunts) {
-			if (livre.isDisponible()) {
+			
 			
 			user.getListEmprunts().add(livre);
 			livre.emprunter();	
 			System.out.println("vous avez emprunter le livre "+ livre.getTitre());
 			
+
+		
 			
-		}else {
-			System.out.println("le livre n'est plus disponible");
-		}
-			
-		}
-			
-		}else {
+		}else if (user.getListEmprunts().size()>= user.limiteEmprunts) {
 			System.out.println("vous avez depasser le nombre de Livre emprunter autorise qui est "+user.getLimiteEmprunts());
+		}	
+		
+		else {
+			
+			for ( Membre lst : listMembre) {
+				if (lst.getListEmprunts().contains(livre))
+				System.out.println(" le livre est plus disponible il a etait emprunté par " +lst.getNom());
+			}
 		}
 		
 		
 	}
 	
-	public void retourneLivre(Book livre) {
+	public void retourneLivre(Membre user, Book livre) {
 		
 	}
 	
