@@ -31,7 +31,8 @@ public class home  {
 		 * 		-voir pour ajouter des donner a la creation  de compte
 		 * 		-cree un  un serviceBiblotch
 		 * 		 -class auteur
-		 * 		- rechercher livre	
+		 * 		- rechercher livre plus approfondie
+		 * 		- regarder pour quand je fait les espace se m compte deux mot ???	
 		 * 
 		 */
 		
@@ -39,7 +40,7 @@ public class home  {
 			System.out.println("============Menu============");
 		System.out.println("bienvenue sur ta gestion de livre");
 		 System.out.println("""
-		 		 -tape 1 pour cree un compte
+		 		 -tape 1 pour cree un compte(password)
 		 		 -tape 2 pour  voir les livre disponible
 		 		 -tape 3 : ajout livre dans la bibliothque(password)
 		 		 tape 4 : emprunter un livre 
@@ -117,6 +118,17 @@ public class home  {
 		 		}	
 		 	}
 		 	break;
+		 }
+		 case 7 :{System.out.println("voici la liste des  membre"); 
+		 		if(library.getListMembre().isEmpty()) {
+		 			System.out.println(" la liste est vide");
+		 			break;
+		 		}else {
+		 			library.AfficheMembre();
+		 			break;
+		 		}
+		 		
+		 
 		 }
 		 
 		 case 8 :{ 

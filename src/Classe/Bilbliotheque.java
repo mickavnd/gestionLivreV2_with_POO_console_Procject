@@ -41,8 +41,9 @@ public class Bilbliotheque {
 	public void AfficheMembre() {
 		 
 	for(Membre lst : listMembre) {
-		System.out.print(lst.getId());
-		System.out.println(lst.getNom());
+		System.out.print("Id :" +lst.getId());
+		System.out.println("Nom :" +lst.getNom());
+		System.out.println("Mot de passe :"+lst.getPassword());
 		
 		System.out.println("=========================");
 	}
@@ -146,7 +147,7 @@ public class Bilbliotheque {
 		}
 			
 		}else {
-			System.out.println("vous avez depasser le nombre de Livre emprunter autorise qui est"+user.getLimiteEmprunts());
+			System.out.println("vous avez depasser le nombre de Livre emprunter autorise qui est "+user.getLimiteEmprunts());
 		}
 		
 		

@@ -7,17 +7,25 @@ public  class  Membre {
 	
 	private  String id;
 	private String nom;
+	private String password;
 	public int limiteEmprunts;
 	private List<Book> ListEmprunts;
 	
 	
 	
-  public Membre( String nom,int limiteEmprunts) {
+  
+
+
+
+public Membre( String nom,int limiteEmprunts) {
 	  
 	  this.id = IdGenerate.generateId();
 	  this.nom = nom;
 	  this.limiteEmprunts = limiteEmprunts;
 	  this.ListEmprunts =new ArrayList<Book>();
+	  
+	  //generate password 
+	  this.password =  generatePassword.generate(10);
 
 	  
   }
@@ -69,6 +77,15 @@ public void setLimiteEmprunts(int limiteEmprunts) {
 }
 
 
+public String getPassword() {
+	return password;
+}
+
+
+
+public void setPassword(String password) {
+	this.password = password;
+}
 
 public void retournerLivre(Book livre) {
 	
