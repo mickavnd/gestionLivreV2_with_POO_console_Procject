@@ -40,12 +40,6 @@ public class Book {
 		
 	}
 	
-	public void retourner() {
-		
-		this.setDisponible(true);
-		System.out.println("vous avez retourne le livre"+ this.titre);
-		
-	}
 	
 	public String disponible(Boolean isBoolean) {
 		

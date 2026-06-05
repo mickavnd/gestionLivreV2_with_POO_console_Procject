@@ -158,6 +158,17 @@ public class Bilbliotheque {
 	
 	public void retourneLivre(Membre user, Book livre) {
 		
+		if(livre.isDisponible()) {
+			 System.out.println(" le livre et deja retourner");
+		}else {
+			user.getListEmprunts().remove(livre);
+			livre.setDisponible(true);
+			System.out.println("le livre "+ livre.getTitre()+" et retourner ");
+			
+			
+			
+		}
+		
 	}
 	
 	public void rechercherUnLivre(String name) {

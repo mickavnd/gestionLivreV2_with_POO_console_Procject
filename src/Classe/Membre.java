@@ -87,17 +87,9 @@ public void setPassword(String password) {
 	this.password = password;
 }
 
-public void retournerLivre(Book livre) {
+
 	
-	if(ListEmprunts.contains(livre)) {
-		livre.retourner();
-		ListEmprunts.remove(livre);
-		
-	}else {
-		System.out.println("vous navez pas emprunter se livre ");
-	}
-	
-}
+
 
 
     

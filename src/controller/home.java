@@ -24,7 +24,9 @@ public class home  {
 	 
 	public static void main(String[] args) {
 		
-		/*Todo : -finir le de relier  les fonctionaliter dans  le switch
+		/*Todo : - prioriter bien refaire les classe avec la bonne methode
+		 * 
+		 *  -finir le de relier  les fonctionaliter dans  le switch
 		 * 		-bien implementer le  switch case
 		 * 		-cree un admin
 		 * 		-nombre dexemplaire pour un livre quand =0 zero livre nest plus dispo 
@@ -119,7 +121,28 @@ public class home  {
 		 		}	
 		 	}
 		 	break;
-		 }case 6 :{ 
+		 }case 6 :{ System.out.println("qui  et vous  ?");
+			for(int i= 0 ;i<library.getListMembre().size();i++) {
+ 				//get() return the index			
+ 				System.out.println(i +"-"+library.getListMembre().get(i).getNom());
+ 				
+ 			}
+ 			int choixMembre = sc.nextInt();
+ 			Membre user = library.getListMembre().get(choixMembre);
+ 			
+ 			System.out.println("quelle livre voulez vous retourner (choisire le numero?");
+ 			for(int i= 0 ;i<library.getListLivre().size();i++) {
+					
+ 				//important to know that 
+ 				System.out.println(i +"-"+library.getListLivre().get(i).getTitre());
+ 				
+ 			}
+ 			int choixLivre = sc.nextInt();
+ 			Book choiceLivre = library.getListLivre().get(choixLivre);
+ 			
+ 			 
+ 			 library.retourneLivre(user, choiceLivre);
+ 			break;
 			 
 			 
 		 }
